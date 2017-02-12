@@ -1,0 +1,99 @@
+<html>
+<link rel="stylesheet" href="bootstrap.min.css">
+<style media="screen">
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  canvas {
+    display: block;
+    cursor: url('./draw.ico'),default;
+    margin-top: 50px;
+  }
+</style>
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">网站无障碍截图反馈</a>
+  </div>
+  <div>
+    <form class="navbar-form navbar-left">
+      <select id="selWidth" class="form-control">
+        <option value="1">线宽1</option>
+        <option value="3">线宽3</option>
+        <option value="5" selected="selected">线宽5</option>
+        <option value="7">线宽7</option>
+        <option value="9">线宽9</option>
+        <option value="11">线宽11</option>
+      </select>
+    </form>
+    <form class="navbar-form navbar-left">
+      <select id="selColor" class="form-control">
+        <option value="black">黑色</option>
+        <option value="blue">蓝色</option>
+        <option value="red" selected="selected">红色</option>
+        <option value="green">绿色</option>
+        <option value="yellow">黄色</option>
+        <option value="gray">灰色</option>
+      </select>
+    </form>
+    <form class="navbar-form navbar-left">
+      <select id="selFunc" class="form-control">
+        <option value="line">画线</option>
+        <option value="rect">画框</option>
+        <option value="circle">画圆</option>
+        <option value="ellipse">画椭圆</option>
+      </select>
+    </form>
+    <button id="clearAreaBtn" type="button" class="btn btn-default navbar-btn" style="margin-left:15px;">
+      清除标记
+    </button>
+
+    <div class="navbar-form navbar-right">
+      <div class="input-group">
+				<input id="advice" type="text" class="form-control" placeholder="意见及建议">
+				<span class="input-group-btn">
+					<button id="submitBtn" class="btn btn-default" type="button" >
+						提交
+					</button>
+				</span>
+			</div>
+    </div>
+  </div>
+  </div>
+</nav>
+<!-- <div class="container"> -->
+<canvas id="canvas" >对不起，您的浏览器并不支持html5 canvas</canvas>
+<input id="pageUrl" hidden></input>
+
+  <!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					友情提示
+				</h4>
+			</div>
+			<div class="modal-body">
+				提交成功，谢谢您的反馈❤
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+
+  <script src="jquery-2.0.0.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <script src="screenshot.js"></script>
+  <script src="submit.js"></script>
+</body>
+</html>
